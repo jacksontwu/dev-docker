@@ -24,13 +24,15 @@ ENV GOROOT /usr/lig/go
 ENV GOPATH /go
 ENV PATH /go/bin:$PATH
 
-RUN mkdir -p ${GOPATH}/src &{GOPATH}/bin
+RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
 
 # git
+ENV email user@some.com
+ENV user user
 RUN mkdir -p /root/.ssh
 COPY id_rsa /root/.ssh/
 RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config && echo "UserKnownHostsFile /dev/null" >> /etc/ssh/ssh_config
-RUN git config --global user.email "username@email.com" && git config --global user.name "username"
+RUN git config --global user.email ${email} && git config --global user.name ${user}
 RUN chown 1000:1000 /root/.ssh/id_rsa
 
 # Command prompt
