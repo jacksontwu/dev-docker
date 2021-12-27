@@ -2,7 +2,7 @@
 
 ## build
 ```bash
-docker build -f ${image-name} .
+docker build -t ${image-name} .
 ```
 
 ## run
