@@ -27,8 +27,8 @@ ENV PATH /go/bin:$PATH
 RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
 
 # git
-ENV email user@some.com
-ENV user user
+ARG email
+ARG user
 RUN mkdir -p /root/.ssh
 COPY id_rsa /root/.ssh/
 RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config && echo "UserKnownHostsFile /dev/null" >> /etc/ssh/ssh_config
