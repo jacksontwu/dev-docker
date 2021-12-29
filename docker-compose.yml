@@ -27,9 +27,9 @@ services:
     environment:
       TZ: Asia/Shanghai
       MYSQL_ROOT_PASSWORD: root
-      ports:
-        - '3306:3306'
-      volumes:
-        - ./db:/var/lib/mysql
-        - ./conf/my.cnf:/etc/my.cnf
-        - ./init:/docker-entrypoint-initd.d/
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./conf/my.cnf:/etc/my.cnf
+      - ./init:/docker-entrypoint-initd.d/
