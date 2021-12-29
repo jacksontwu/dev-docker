@@ -7,6 +7,7 @@ RUN apk add curl bash ca-certificates openssh
 # nodejs
 RUN apk add --update curl
 RUN apk add --update nodejs npm
+RUN npm config set registry https://registry.npm.taobao.org
 # RUN npm install -g npm@7.24.2
 
 # Java and Maven
