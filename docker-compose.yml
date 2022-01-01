@@ -9,7 +9,7 @@ services:
     build:
       context: .
       args:
-        email: jacksonwu1992@sina.com
+        email: jacksonwu1992@163.com
         user: jacksontwu
     ports:
       - '5000:5000'
